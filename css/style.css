@@ -253,15 +253,74 @@ h2.display em { font-style: italic; }
   line-height: 1.15; margin-top: 24px; letter-spacing: -0.005em;
 }
 
-.feature-icon svg {
-  width: 32px; height: 32px;
-  stroke: var(--ink-soft);
-}
-
 .feature .badge {
   position: absolute; top: 24px; right: 24px;
   font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--muted); border: 1px solid var(--line-strong); padding: 4px 8px;
+}
+
+
+/* ─────────── PHOTO FEATURES ─────────── */
+
+.photo-features {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 340px 340px;
+  gap: 12px;
+}
+
+.photo-feature {
+  position: relative; overflow: hidden;
+}
+
+.photo-feature--tall { grid-row: span 2; }
+
+.photo-feature img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform 0.7s ease;
+  display: block;
+}
+
+.photo-feature:hover img { transform: scale(1.04); }
+
+.photo-feature-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top,
+    rgba(0,0,0,0.72) 0%,
+    rgba(0,0,0,0.1) 50%,
+    rgba(0,0,0,0) 100%);
+  display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 36px;
+  color: #fff;
+}
+
+.photo-feature-overlay h4 {
+  font-family: var(--serif); font-size: 30px;
+  font-weight: 400; line-height: 1.1;
+}
+
+.photo-feature-overlay p {
+  font-size: 13px; line-height: 1.65;
+  opacity: 0.85; margin-top: 10px; max-width: 340px;
+}
+
+.features-also {
+  margin-top: 48px; padding-top: 48px;
+  border-top: 1px solid var(--line);
+}
+
+.features-tags {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px;
+}
+
+.ftag {
+  font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  border: 1px solid var(--line-strong); padding: 12px 22px;
+  color: var(--ink-soft); white-space: nowrap;
+}
+
+.ftag em {
+  font-style: normal; color: var(--muted);
 }
 
 
@@ -777,7 +836,8 @@ footer .col a:hover { color: #fff; }
   .preview-grid, .pkg-grid { grid-template-columns: repeat(2, 1fr); }
   .about, .contact { grid-template-columns: 1fr; gap: 56px; }
   .foot-inner { grid-template-columns: 1fr 1fr; }
-  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .photo-features { grid-template-columns: 1fr; grid-template-rows: 340px 280px 280px; }
+  .photo-feature--tall { grid-row: span 1; }
   .features-head { grid-template-columns: 1fr; gap: 32px; }
   .addons-box { grid-template-columns: 1fr; gap: 32px; }
   .events-banner-inner { grid-template-columns: 1fr; }
@@ -796,9 +856,10 @@ footer .col a:hover { color: #fff; }
 
   .pkg-grid, .page-hero { padding-left: 24px; padding-right: 24px; }
 
-  .preview-grid, .pkg-grid, .features-grid, .reviews-grid {
+  .preview-grid, .pkg-grid, .reviews-grid {
     grid-template-columns: 1fr;
   }
+  .photo-features { grid-template-rows: 320px 260px 260px; }
 
   .preview-head {
     flex-direction: column; align-items: flex-start; gap: 32px;
