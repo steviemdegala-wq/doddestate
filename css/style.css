@@ -126,6 +126,30 @@ nav.top ul a.active::after { width: 100%; }
   letter-spacing: 0.24em; text-transform: uppercase; opacity: 0.85;
 }
 
+.hero-ctas {
+  display: flex; gap: 16px; margin-top: 48px; flex-wrap: wrap;
+  justify-content: center;
+}
+
+.hero-btn {
+  font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 16px 36px; text-decoration: none; font-family: var(--sans);
+  border: 1px solid rgba(255,255,255,0.7); color: #fff;
+  transition: all 0.25s ease; backdrop-filter: blur(4px);
+}
+
+.hero-btn:hover {
+  border-color: #fff; background: rgba(255,255,255,0.12);
+}
+
+.hero-btn--primary {
+  background: #fff; color: var(--ink); border-color: #fff;
+}
+
+.hero-btn--primary:hover {
+  background: rgba(255,255,255,0.88);
+}
+
 .hero-scroll {
   position: absolute; bottom: 40px; left: 50%;
   transform: translateX(-50%);
