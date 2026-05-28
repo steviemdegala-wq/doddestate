@@ -795,6 +795,19 @@ footer .col a:hover { color: #fff; }
 
 /* ═══════════ BOOK PAGE ═══════════ */
 
+.availability-notice {
+  text-align: center; font-size: 13px; letter-spacing: 0.04em;
+  color: var(--ink-soft); margin: 0 auto 32px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+}
+
+.avail-dot {
+  display: inline-block; width: 8px; height: 8px;
+  border-radius: 50%; background: #4caf50;
+  box-shadow: 0 0 0 3px rgba(76,175,80,0.2);
+  flex-shrink: 0;
+}
+
 .cal-embed {
   max-width: 1100px; margin: 0 auto 80px;
   padding: 0;
