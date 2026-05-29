@@ -1,18 +1,6 @@
 export async function onRequestPost(context) {
   const { request, env } = context;
 
-  // Temporary debug — remove after fix
-  const envCheck = {
-    hasSid: !!env.TWILIO_ACCOUNT_SID,
-    hasToken: !!env.TWILIO_AUTH_TOKEN,
-    hasFrom: !!env.TWILIO_FROM_NUMBER,
-    hasTo: !!env.TWILIO_TO_NUMBER,
-    sidPrefix: env.TWILIO_ACCOUNT_SID ? env.TWILIO_ACCOUNT_SID.slice(0, 6) : 'missing',
-  };
-  if (!env.TWILIO_ACCOUNT_SID) {
-    return new Response(`Env vars missing: ${JSON.stringify(envCheck)}`, { status: 500 });
-  }
-
   const formData = await request.formData();
   const firstName = formData.get('first_name') || '';
   const lastName  = formData.get('last_name')  || '';
@@ -49,6 +37,7 @@ export async function onRequestPost(context) {
     return Response.redirect(`${redirectBase}/?sent=1`, 303);
   } else {
     const err = await res.text();
-    return new Response(`Twilio error (${res.status}): ${err}`, { status: 500, headers: { 'content-type': 'text/plain' } });
+    console.error('Twilio error:', err);
+    return Response.redirect(`${redirectBase}/?sent=error`, 303);
   }
 }
