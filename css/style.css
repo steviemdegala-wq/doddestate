@@ -491,15 +491,12 @@ h2.display em { font-style: italic; }
   transition: all 0.25s ease;
 }
 
-.contact-btn--call {
-  background: var(--ink); color: #fff;
-}
-
+.contact-btn--call,
 .contact-btn--text {
   background: transparent; color: var(--ink);
 }
 
-.contact-btn--call:hover { background: var(--ink-soft); border-color: var(--ink-soft); }
+.contact-btn--call:hover,
 .contact-btn--text:hover { background: var(--ink); color: #fff; }
 
 .contact-btn-icon {
@@ -512,11 +509,10 @@ h2.display em { font-style: italic; }
 
 .contact-btn small {
   font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-  color: rgba(255,255,255,0.65); font-weight: 400;
+  color: var(--muted); font-weight: 400;
 }
 
-.contact-btn--text small { color: var(--muted); }
-.contact-btn--text:hover small { color: rgba(255,255,255,0.65); }
+.contact-btn:hover small { color: rgba(255,255,255,0.65); }
 
 .contact-btn span:last-child > *:last-child {
   font-family: var(--serif); font-size: 28px; line-height: 1;
