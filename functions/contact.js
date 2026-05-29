@@ -37,7 +37,6 @@ export async function onRequestPost(context) {
     return Response.redirect(`${redirectBase}/?sent=1`, 303);
   } else {
     const err = await res.text();
-    console.error('Twilio error:', err);
-    return Response.redirect(`${redirectBase}/?sent=error`, 303);
+    return new Response(`Twilio error (${res.status}): ${err}`, { status: 500, headers: { 'content-type': 'text/plain' } });
   }
 }
