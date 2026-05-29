@@ -521,6 +521,16 @@ h2.display em { font-style: italic; }
 
 
 
+/* ─────────── MAP ─────────── */
+
+.map-embed {
+  width: 100%; line-height: 0;
+  border-top: 1px solid var(--line);
+}
+
+.map-embed iframe { display: block; width: 100%; }
+
+
 /* ─────────── FOOTER ─────────── */
 
 footer {
