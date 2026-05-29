@@ -852,6 +852,39 @@ footer .col a:hover { color: #fff; }
 }
 
 
+/* ─────────── MOBILE STICKY CTA ─────────── */
+
+.mobile-cta {
+  display: none;
+}
+
+@media (max-width: 720px) {
+  .mobile-cta {
+    display: flex; position: fixed; bottom: 0; left: 0; right: 0;
+    z-index: 200; border-top: 1px solid var(--line);
+  }
+
+  .mobile-cta-btn {
+    flex: 1; padding: 18px 12px; text-align: center;
+    font-family: var(--sans); font-size: 13px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+  }
+
+  .mobile-cta-btn--call {
+    background: #fff; color: var(--ink);
+    border-right: 1px solid var(--line);
+  }
+
+  .mobile-cta-btn--book {
+    background: var(--ink); color: #fff;
+  }
+
+  /* Push footer up so it's not hidden behind the bar */
+  footer { padding-bottom: 80px; }
+}
+
+
 /* ═══════════ MOBILE NAV ═══════════ */
 
 .mobile-toggle {
