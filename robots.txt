@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.thedoddestate.com/sitemap.xml
+Sitemap: https://www.doddestate.com/sitemap.xml
